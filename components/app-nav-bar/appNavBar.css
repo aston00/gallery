@@ -1,0 +1,38 @@
+.nav_bav {
+    background-color: #35424a;
+    border-bottom: #1E90FF 3px solid;
+    height: 8rem;
+}
+
+
+.container {
+    height: inherit;
+    width: 80%;
+    margin: auto;
+}
+.nav_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: inherit;
+}
+
+.responsive_text {
+
+}
+
+.responsive_text h3 {
+    font-size: 3.2rem;
+    color: white;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+}
+
+.list li {
+    color: white;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+} 
