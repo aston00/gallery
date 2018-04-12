@@ -1,4 +1,5 @@
 .showcase {
     height: 43rem;
-    /* background:  */
+    background: url(/assets/img/street.jpg) no-repeat 0 -43rem;
+   
 }

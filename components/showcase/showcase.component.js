@@ -5,3 +5,5 @@ angular.module('app')
             
         }
     })
+
+require('./showcase.css');

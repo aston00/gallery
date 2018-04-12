@@ -1,4 +1,4 @@
-angular.module('app', []);
+angular.module('app', ['ui.router']);
 
 
 // require('./directives/clipboard.directive');
@@ -9,14 +9,14 @@ require('./main.css');
 
 // angular.module('app').config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
-    // $urlRouterProvider.otherwise('/');
+//     $urlRouterProvider.otherwise('/');
 
-    // $stateProvider
-    //     .state({
-    //         name: 'home',
-    //         url: '/',
-    //         template: '<app-main></app-main>'
-    //     })
+//     $stateProvider
+//         .state({
+//             name: 'home',
+//             url: '/',
+//             template: '<app-showcase></app-showcase>'
+//         })
         
 // }])
 
