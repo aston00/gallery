@@ -5,11 +5,6 @@
 }
 
 
-.container {
-    height: inherit;
-    width: 80%;
-    margin: auto;
-}
 .nav_container {
     display: flex;
     justify-content: space-between;
