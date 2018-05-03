@@ -18,6 +18,11 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function($
 // require('./directives/clipboard.directive');
 require('./components/app-nav-bar/appNavBar.component');
 require('./components/showcase/showcase.component');
+require('./components/gallery/gallery.component');
+require('./components/gallery/gallery-sidemenu/gallery-sidemenu.component');
+require('./components/gallery/gallery-previewer/gallery-previewer.component');
+
+
 require('./main.css');
 // require('./components/skillsPage/skills.component');
 

@@ -1,6 +1,8 @@
 .showcase {
-    height: 43rem;
-    background: url(/assets/img/street.jpg) no-repeat 0 -43rem;
+    height: 80vh;
+    background: url(/assets/img/street.jpg) no-repeat 0 -20vh;
+    background-attachment: fixed;
+    
 }
 
 .showcase-outer {
@@ -20,11 +22,6 @@
     font-size: 7rem;
     letter-spacing: .3rem;
     text-shadow: 2px 2px 4px #000000;
-}
-
-.showcase-welcome::first-letter {
-    color: #1E90FF;
-   
 }
 
 .showcase-creator {
