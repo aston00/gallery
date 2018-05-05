@@ -1,4 +1,22 @@
 .gallery-section {
-    background-color: grey;
+    background-color: white;
     height: 100vh;
+}
+.gallery-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13rem;
+}
+.gallery-heading h2{
+    color: #1E90FF;
+    font-weight: 400;
+    font-size: 6rem;
+    padding: 2rem;
+}
+
+.gallery-folder {
+    display: flex;
+    justify-content: space-between;
+    
 }
