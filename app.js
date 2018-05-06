@@ -23,6 +23,7 @@ require('./components/gallery/gallery-sidemenu/gallery-sidemenu.component');
 require('./components/gallery/gallery-previewer/gallery-previewer.component');
 
 require('./services/sections.service');
+require('./services/previewed-images.service');
 
 require('./main.css');
 // require('./components/skillsPage/skills.component');
