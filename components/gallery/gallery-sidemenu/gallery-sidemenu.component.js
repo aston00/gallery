@@ -6,7 +6,11 @@ angular.module('app')
             getImages: '&'
         },
         controller: function(){
-           
+           this.startAnimation = function(event){
+               let text = event.target.childNodes[1].value;
+               
+            //   console.log(event.target.childNodes[1]);
+           }
         }
     })
 

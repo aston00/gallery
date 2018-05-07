@@ -21,6 +21,7 @@ require('./components/showcase/showcase.component');
 require('./components/gallery/gallery.component');
 require('./components/gallery/gallery-sidemenu/gallery-sidemenu.component');
 require('./components/gallery/gallery-previewer/gallery-previewer.component');
+require('./components/footer/footer.component');
 
 require('./services/sections.service');
 require('./services/previewed-images.service');

@@ -5,18 +5,19 @@
 }
 
 .gallery-sidemenu-link-container{
-    margin-top: 13rem;
+    margin-top: 8rem;
+    padding-left: 20rem;
 }
 
 .gallery-sidemenu-link-list{
     list-style: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .gallery-sidemenu-link-item {
     position: relative;
     padding: .5rem 0 .5rem 1.5rem;
-    font-size: 2rem;
-    color: #333333;
     cursor: pointer;
     /* border: 1px solid lightgrey; */
 }
@@ -62,6 +63,11 @@
     position: relative;
     color:#333333;
     text-decoration: none;
+    font-style: italic;
+    text-transform: capitalize;
+    letter-spacing: .3rem;
+    font-size: 3rem;
+    font-weight: 100;
 }
 .gallery-sidemenu-link-list:nth-child(1){
 

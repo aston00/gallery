@@ -1,12 +1,12 @@
 .gallery-section {
-    background-color: white;
+    background-color: #eeeeee;
     height: 100vh;
 }
 .gallery-heading {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 13rem;
+    height: 25rem;
 }
 .gallery-heading h2{
     color: #1E90FF;
