@@ -7,7 +7,8 @@ angular.module('app')
         },
         controller: function(){
            this.startAnimation = function(event){
-               let text = event.target.childNodes[1].value;
+            // console.log(event.target.childNodes[1])
+               let text = event.target.value;
                
             //   console.log(event.target.childNodes[1]);
            }

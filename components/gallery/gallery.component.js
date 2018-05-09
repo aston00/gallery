@@ -4,12 +4,17 @@ angular.module('app')
         controller: ['SectionsService', 'PreviewedImagesService', function(SectionsService, PreviewedImagesService){
             let ctrl = this;
             this.$onInit = function(){
+                
                 SectionsService.getSections().then(sections => {
                     console.log(sections);
                     ctrl.sections = sections;
-                });
+                })
 
-                ctrl.images = '';
+                PreviewedImagesService.getImagesBySection('people')
+                    .then(data => {
+                        
+                        ctrl.images = data;
+                    })
             }
 
             this.onSectionChange = function(section){
