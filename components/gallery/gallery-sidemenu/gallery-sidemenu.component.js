@@ -7,6 +7,7 @@ angular.module('app')
         },
         controller: function(){
            this.startAnimation = function(event){
+               debugger;
             // console.log(event.target.childNodes[1])
                let text = event.target.value;
                

@@ -1,0 +1,29 @@
+<section class="section-container">
+    
+    
+    <div class="carousel-container">
+        <div class="carousel">
+            <ul class="carousel-list">
+                <li ng-repeat="x in $ctrl.sections track by $index" class="carousel-list-item">
+                    <img ng-src="{{x}}" alt="" class="carousel-img">
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div>
+        <ul>
+            <li ng-repeat="x in $ctrl.sections track by $index">{{x}}</li>
+        </ul>
+    
+        <div>
+            <h2>Click button to add link to the clipboard</h2>
+            <h2>Link was added to the clipboard</h2>
+        </div>
+        <div class="copy-to-clipboard-container">
+            <input type="text" class="copy-to-clipboard-input">
+            <button ng-click="$ctrl.copyToClipboard()" class="copy-to-clipboard-button">Copy</button>
+        </div>
+    </div>
+    
+</section>

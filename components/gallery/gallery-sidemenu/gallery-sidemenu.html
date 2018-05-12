@@ -2,7 +2,7 @@
     <div class="gallery-sidemenu-link-container">
         <ul class="gallery-sidemenu-link-list">
             <li class="gallery-sidemenu-link-item" ng-repeat="section in $ctrl.sections"  >
-                <a href="" ng-mouseover="$ctrl.getImages({section:section});  $ctrl.startAnimation($event)" class="gallery-sidemenu-link-a">{{section}}</a>
+                <a ui-sref="section({section: section})" ng-mouseover="$ctrl.getImages({section:section});  $ctrl.startAnimation($event)" class="gallery-sidemenu-link-a">{{section}}</a>
             </li>
           
         </ul>

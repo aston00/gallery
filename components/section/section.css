@@ -1,0 +1,27 @@
+.section-container {
+    display: block;
+    width:100%;
+}
+
+.carousel-container {
+    width: 60%;
+    margin: 10rem auto;
+}
+
+.carousel {
+
+}
+
+.carousel-list {
+    /* display: flex;
+    position: relative; */
+
+}
+
+.carousel-list-item {
+
+}
+
+.carousel-img {
+    width:100%;
+}

@@ -11,6 +11,31 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function($
             url: '/',
             template: '<app-showcase></app-showcase>'
         })
+        .state({
+            name: 'section',
+            url: '/section/:section',
+            template: '<app-section sections="vm.items"></app-section>',
+            resolve: {
+                data : function(){
+                    debugger;
+                }
+            },
+            controller: ['$stateParams', 'PreviewedImagesService', function ($stateParams, PreviewedImagesService){
+                this.items = '';
+                let ctrl = this;
+                this.$onInit = () => {
+                    PreviewedImagesService.getImagesBySection($stateParams.section).then(data => {
+                        console.log(data);
+                        debugger;
+                        ctrl.items = data;
+                    })
+                    debugger;
+                    // ctrl.items = '';
+                }
+                
+            }],
+            controllerAs: 'vm'
+        })
         
 }])
 
@@ -22,6 +47,7 @@ require('./components/gallery/gallery.component');
 require('./components/gallery/gallery-sidemenu/gallery-sidemenu.component');
 require('./components/gallery/gallery-previewer/gallery-previewer.component');
 require('./components/footer/footer.component');
+require('./components/section/section.component');
 
 require('./services/sections.service');
 require('./services/previewed-images.service');
