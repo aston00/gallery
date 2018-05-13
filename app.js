@@ -14,7 +14,7 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function($
         .state({
             name: 'section',
             url: '/section/:section',
-            template: '<app-section sections="vm.items"></app-section>',
+            template: '<app-section images="vm.items"></app-section>',
             resolve: {
                 data : function(){
                     debugger;

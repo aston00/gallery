@@ -1,27 +1,52 @@
 .section-container {
-    display: block;
-    width:100%;
-}
 
+}
+.carousel-section {
+  
+}
 .carousel-container {
-    width: 60%;
-    margin: 10rem auto;
-}
-
-.carousel {
 
 }
-
-.carousel-list {
-    /* display: flex;
-    position: relative; */
+.carousel-main-image {
+  position: relative;
+}
+.carousel-count {
+  position: absolute;
+  font-size: 2rem;
+}
+.carousel-preview-image {
+  width: 100%;
+  /* height: 100rem; */
+}
+.carousel-prev {
+  position: absolute;
+  padding: 0;
+  font-size: 10rem;
+  display: block;
+  top: 35%;
+}
+.carousel-next {
+  position: absolute;
+  top: 35%;
+  right: 0;
+  font-size: 10rem;
+}
+.carousel-caption-container {
 
 }
-
-.carousel-list-item {
+.carousel-caption-text {
 
 }
-
-.carousel-img {
-    width:100%;
+.carousel-bottomt-slider{
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  
+}
+.carousel-bottom-item-container {
+  width:20%;
+}
+.carousel-bottom-item {
+  width:100%;
+  height:auto;
 }

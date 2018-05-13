@@ -1,29 +1,49 @@
 <section class="section-container">
-    
-    
+
+
+
+  <section class="carousel-section">
     <div class="carousel-container">
-        <div class="carousel">
-            <ul class="carousel-list">
-                <li ng-repeat="x in $ctrl.sections track by $index" class="carousel-list-item">
-                    <img ng-src="{{x}}" alt="" class="carousel-img">
-                </li>
-            </ul>
-        </div>
+      <div class="carousel-main-image">
+        <div class="carousel-count">1 / 6</div>
+        <img class="carousel-preview-image" ng-src="{{$ctrl.imgToPreview}}">
+      
+      
+        <a class="carousel-prev" ng-click="$ctrl.showNextImage()">❮</a>
+        <a class="carousel-next" ng-click="$ctrl.showPrevImage()">❯</a>
+      </div>
+
+
+      <div class="carousel-caption-container">
+        <p class="carousel-caption-text"></p>
+      </div>
     </div>
 
-    <div>
-        <ul>
-            <li ng-repeat="x in $ctrl.sections track by $index">{{x}}</li>
-        </ul>
-    
-        <div>
-            <h2>Click button to add link to the clipboard</h2>
-            <h2>Link was added to the clipboard</h2>
-        </div>
-        <div class="copy-to-clipboard-container">
-            <input type="text" class="copy-to-clipboard-input">
-            <button ng-click="$ctrl.copyToClipboard()" class="copy-to-clipboard-button">Copy</button>
-        </div>
+
+    <div class="carousel-bottomt-slider">
+      <div ng-repeat="image in $ctrl.images track by $index" class="carousel-bottom-item-container">
+        <img class="carousel-bottom-item" ng-src="{{image}}" ng-click="$ctrl.showImage(image)" alt="The Woods">
+      </div>
     </div>
-    
+  </section>
+
+
+
 </section>
+<!-- 
+  <div>
+    <ul>
+      <li ng-repeat="x in $ctrl.sections track by $index">{{x}}</li>
+    </ul>
+
+    <div>
+      <h2>Click button to add link to the clipboard</h2>
+      <h2>Link was added to the clipboard</h2>
+    </div>
+    <div class="copy-to-clipboard-container">
+      <input type="text" class="copy-to-clipboard-input">
+      <button ng-click="$ctrl.copyToClipboard()" class="copy-to-clipboard-button">Copy</button>
+    </div>
+  </div>
+
+</section> -->
