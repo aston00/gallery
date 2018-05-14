@@ -10,7 +10,7 @@ angular.module('app')
             ctrl.copiedSuccessful = false;
             
             ctrl.$onInit = function() {
-               
+                
                 console.log(ctrl.imgToPreview);
                 console.log(ctrl.images);
                 ctrl.imgToPreview = '';
@@ -20,6 +20,8 @@ angular.module('app')
                if(changes.images){
                    ctrl.images = changes.images.currentValue;
                    ctrl.imgToPreview = ctrl.images[0];
+                   let elem = document.querySelector('.carousel-preview-image');
+                elem.style.backgroundImage = 'url(' + ctrl.imgToPreview + ')';
                    console.log('changes', changes);
                } 
             }
