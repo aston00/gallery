@@ -4,72 +4,70 @@ angular.module('app')
         bindings: {
             images: '<'
         },
-        controller: function(){
+        controller: function () {
+
+            //TODO:: function for checking scroll location and changing it according to slider shown
+            //TODO:: when we click on item in the slider - we show it in main window and update all info
+
 
             let ctrl = this;
             ctrl.copiedSuccessful = false;
-            
-            ctrl.$onInit = function() {
-                
+
+            ctrl.$onInit = function () {
+
                 console.log(ctrl.imgToPreview);
                 console.log(ctrl.images);
-                ctrl.imgToPreview = '';
+                ctrl.imgToPreview = 0;
             }
 
-            ctrl.$onChanges = function(changes){
-               if(changes.images){
-                   ctrl.images = changes.images.currentValue;
-                   ctrl.imgToPreview = ctrl.images[0];
-                   let elem = document.querySelector('.carousel-preview-image');
-                elem.style.backgroundImage = 'url(' + ctrl.imgToPreview + ')';
-                   console.log('changes', changes);
-               } 
+            ctrl.$onChanges = function (changes) {
+                if (changes.images) {
+                    ctrl.images = changes.images.currentValue;
+
+                    // let elem = document.querySelector('.carousel-preview-image');
+                    // elem.style.backgroundImage = 'url(' + ctrl.images[ctrl.imgToPreview] + ')';
+                    // console.log('changes', changes);
+                }
+            }
+
+            //When we show last item - we need to disable arrow
+            ctrl.checkForLastItem = () => {
+
+            }
+
+            this.showNextImage = () => {
+
+                ctrl.imgToPreview++;
+
+                //Moving slider
+                if(ctrl.imgToPreview > 2){
+                    let sth = document.querySelector('.carousel-bottomt-slider');
+                    let width = sth.offsetWidth;
+                    let elemW = width * .33;
+                    let final = width - 2 * elemW;
+                    
+                    document.querySelector('.carousel-bottomt-slider').scrollLeft = final * ctrl.imgToPreview; 
+                }
+                //for moving scroller 
+                
             }
 
 
+            this.showPrevImage = () => ctrl.imgToPreview--;
 
 
-            this.copyToClipboard = function(){
+
+
+            this.copyToClipboard = function () {
                 let element = document.querySelector('.copy-to-clipboard-input');
                 element.select();
                 let clipboardCopy = document.execCommand('copy');
-                if(clipboardCopy){
+                if (clipboardCopy) {
                     ctrl.copiedSuccessful = true;
                 } else {
                     console.log('error while copying to clipbaord');
                 }
             }
-
-            // var slideIndex = 1;
-            // showSlides(slideIndex);
-            
-            // function plusSlides(n) {
-            //   showSlides(slideIndex += n);
-            // }
-            
-            // function currentSlide(n) {
-            //   showSlides(slideIndex = n);
-            // }
-            
-            // function showSlides(n) {
-            //   var i;
-            //   var slides = document.getElementsByClassName("mySlides");
-            //   var dots = document.getElementsByClassName("demo");
-            //   var captionText = document.getElementById("caption");
-            //   if (n > slides.length) {slideIndex = 1}
-            //   if (n < 1) {slideIndex = slides.length}
-            //   for (i = 0; i < slides.length; i++) {
-            //       slides[i].style.display = "none";
-            //   }
-            //   for (i = 0; i < dots.length; i++) {
-            //       dots[i].className = dots[i].className.replace(" active", "");
-            //   }
-            //   slides[slideIndex-1].style.display = "block";
-            //   dots[slideIndex-1].className += " active";
-            //   captionText.innerHTML = dots[slideIndex-1].alt;
-            // }
-
-
 
 
         }

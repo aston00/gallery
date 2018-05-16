@@ -2,30 +2,33 @@
 
 
 
+  <!-- TODO: Clipboard copying here -->
   <section class="carousel-section">
     <div class="carousel-container">
       <div class="carousel-main-image">
         <div class="carousel-count">1 / 6</div>
-        <div class="carousel-preview-image" ></div>
-        <!-- <img class="carousel-preview-image" ng-src="{{$ctrl.imgToPreview}}"> -->
+        <div class="carousel-preview-image" ng-style="{'background-image':'url(' + $ctrl.images[$ctrl.imgToPreview] + ')'}"></div>
+
 
         <div class="carousel-actions-container">
-          <a class="carousel-prev" ng-click="$ctrl.showNextImage()">❮</a>
-          <a class="carousel-next" ng-click="$ctrl.showPrevImage()">❯</a>
+          <a class="carousel-prev" ng-click="$ctrl.showPrevImage()">❮</a>
+          <a class="carousel-next" ng-click="$ctrl.showNextImage()">❯</a>
+        </div>
+
+        <div class="carousel-caption-container">
+          <p class="carousel-caption-text">hello</p>
         </div>
 
       </div>
 
 
-      <div class="carousel-caption-container">
-        <p class="carousel-caption-text">hello</p>
-      </div>
+
     </div>
 
 
     <div class="carousel-bottomt-slider">
-      <div ng-repeat="image in $ctrl.images track by $index" class="carousel-bottom-item-container">
-        <div class="carousel-bottom-item" ng-style="{'background-image':'url({{image}})'}" ng-click="$ctrl.showImage(image)"></div>
+      <div ng-repeat="image in $ctrl.images track by $index" class="carousel-bottom-item-container" ng-class="{'chosen' : $index == $ctrl.imgToPreview }">
+        <div class="carousel-bottom-item"  ng-style="{'background-image':'url({{image}})'}" ng-click="$ctrl.showImage(image)"></div>
       </div>
     </div>
   </section>
