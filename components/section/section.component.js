@@ -6,15 +6,16 @@ angular.module('app')
         },
         controller: function () {
 
-            //TODO:: function for checking scroll location and changing it according to slider shown
+          
             //TODO:: when we click on item in the slider - we show it in main window and update all info
-
+            //TODO:: added name of file handling
 
             let ctrl = this;
             ctrl.copiedSuccessful = false;
 
             ctrl.$onInit = function () {
-
+                ctrl.leftDisabled = false;
+                ctrl.rightDisabled = false;
                 console.log(ctrl.imgToPreview);
                 console.log(ctrl.images);
                 ctrl.imgToPreview = 0;
@@ -30,32 +31,60 @@ angular.module('app')
                 }
             }
 
-            //When we show last item - we need to disable arrow
-            ctrl.checkForLastItem = () => {
-
-            }
+           
 
             this.showNextImage = () => {
-
+                //WRONG FLOW - 
+                ctrl.rightDisabled = ctrl.imgToPreview + 1 == ctrl.images.length - 1 ? true : false;
+                if (ctrl.imgToPreview == ctrl.images.length - 1 ){
+                    
+                    return;
+                }
                 ctrl.imgToPreview++;
 
                 //Moving slider
-                if(ctrl.imgToPreview > 2){
-                    let sth = document.querySelector('.carousel-bottomt-slider');
-                    let width = sth.offsetWidth;
-                    let elemW = width * .33;
-                    let final = width - 2 * elemW;
-                    
-                    document.querySelector('.carousel-bottomt-slider').scrollLeft = final * ctrl.imgToPreview; 
-                }
-                //for moving scroller 
                 
+              
+                let sth = document.querySelector('.carousel-bottomt-slider');
+                let width = sth.offsetWidth;
+                console.log('width', width);
+                let elemW = width * .33;
+                console.log('elemW', elemW);
+                // let final = width - 2 * elemW;
+                let f = ctrl.imgToPreview / 3;
+
+
+                if (Number.isInteger(f)) {
+                    document.querySelector('.carousel-bottomt-slider').scrollLeft = f * width ;
+                }
             }
+            
 
 
-            this.showPrevImage = () => ctrl.imgToPreview--;
 
 
+            this.showPrevImage = () => {
+                if(ctrl.imgToPreview == 0){
+                    ctrl.leftDisabled = true;
+                    return;
+                }
+                ctrl.imgToPreview--;
+
+                let sth = document.querySelector('.carousel-bottomt-slider');
+                let width = sth.offsetWidth;
+                console.log('width', width);
+                let elemW = width * .33;
+                console.log('elemW', elemW);
+                let f = (ctrl.imgToPreview + 1)/ 3;
+
+
+                if (Number.isInteger(f)) {
+                    document.querySelector('.carousel-bottomt-slider').scrollLeft = f * width - width;
+                } else {
+                    document.querySelector('.carousel-bottomt-slider').scrollLeft = Math.floor(f) * width;
+                }
+
+            }
 
 
             this.copyToClipboard = function () {
@@ -68,6 +97,8 @@ angular.module('app')
                     console.log('error while copying to clipbaord');
                 }
             }
+
+
 
 
         }

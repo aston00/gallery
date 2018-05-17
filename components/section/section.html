@@ -11,8 +11,8 @@
 
 
         <div class="carousel-actions-container">
-          <a class="carousel-prev" ng-click="$ctrl.showPrevImage()">❮</a>
-          <a class="carousel-next" ng-click="$ctrl.showNextImage()">❯</a>
+          <a class="carousel-prev" ng-click="$ctrl.showPrevImage()" ng-class="{'fadeArrow' : $ctrl.leftDisabled }">❮</a>
+          <a class="carousel-next" ng-click="$ctrl.showNextImage()" ng-class="{'fadeArrow' : $ctrl.rightDisabled }">❯</a>
         </div>
 
         <div class="carousel-caption-container">

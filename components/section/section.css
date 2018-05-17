@@ -42,6 +42,9 @@
 .carousel-prev {
   color: #1E90FF;
   font-size: 10rem;
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
   transition: all .1s;
 }
 
@@ -50,6 +53,9 @@
   font-size: 10rem;
   transition: all .1s;
   margin-right: 0.4rem;
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
 }
 
 .carousel-prev:hover,
@@ -84,7 +90,7 @@
   display: flex;
 }
 
-.carousel-bottom-item-container:not(:first-child) {
+.carousel-bottom-item-container:not(:first-child), .carousel-bottom-item-container:not(:nth-child(3n + 1)) {
   flex: 0 0 33%;
   margin: 0 .25%  0 .25%;
   height: 20rem;
@@ -97,7 +103,13 @@
   
 }
 
-.carousel-bottom-item-container:first-child {
+
+
+.carousel-bottom-item-container:nth-child(3n){
+  margin: 0 0 0 .25%;
+}
+
+.carousel-bottom-item-container:nth-child(3n + 1), .carousel-bottom-item-container:first-child {
   flex: 0 0 33%;
   margin: 0 .25% 0 0;
   height: 20rem;
@@ -111,4 +123,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.fadeArrow {
+  color: grey;
 }
