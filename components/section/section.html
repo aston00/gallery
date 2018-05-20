@@ -27,8 +27,8 @@
 
 
     <div class="carousel-bottomt-slider">
-      <div ng-repeat="image in $ctrl.images track by $index" class="carousel-bottom-item-container" ng-class="{'chosen' : $index == $ctrl.imgToPreview }">
-        <div class="carousel-bottom-item"  ng-style="{'background-image':'url({{image}})'}" ng-click="$ctrl.showImage(image)"></div>
+      <div ng-repeat="image in $ctrl.images track by $index" class="carousel-bottom-item-container" ng-class="{'chosen' : $index == $ctrl.imgToPreview }" ng-click="$ctrl.showExectItem($index)">
+        <div class="carousel-bottom-item"   ng-style="{'background-image':'url({{image}})'}" ng-click="$ctrl.showImage(image)"></div>
       </div>
     </div>
   </section>

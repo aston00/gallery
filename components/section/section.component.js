@@ -7,14 +7,13 @@ angular.module('app')
         controller: function () {
 
           
-            //TODO:: when we click on item in the slider - we show it in main window and update all info
-            //TODO:: added name of file handling
+           
 
             let ctrl = this;
             ctrl.copiedSuccessful = false;
 
             ctrl.$onInit = function () {
-                ctrl.leftDisabled = false;
+                ctrl.leftDisabled = true;
                 ctrl.rightDisabled = false;
                 console.log(ctrl.imgToPreview);
                 console.log(ctrl.images);
@@ -24,20 +23,35 @@ angular.module('app')
             ctrl.$onChanges = function (changes) {
                 if (changes.images) {
                     ctrl.images = changes.images.currentValue;
+                }
+                // if (changes.imgToPreview){
+                //     console.log(changes);
+                //     ctrl.rightDisabled = ctrl.images.length == changes.imgToPreview + 1 ? true : false;
+                // }
 
                     // let elem = document.querySelector('.carousel-preview-image');
                     // elem.style.backgroundImage = 'url(' + ctrl.images[ctrl.imgToPreview] + ')';
                     // console.log('changes', changes);
-                }
+                
             }
 
+            ctrl.showExectItem = function(index){
+                console.log(index);
+                
+                ctrl.leftDisabled = index == 0;
+                ctrl.rightDisabled = index == ctrl.images.length - 1
+                
+                
+                ctrl.imgToPreview = index;
+                
+            }
            
 
             this.showNextImage = () => {
                 //WRONG FLOW - 
-                ctrl.rightDisabled = ctrl.imgToPreview + 1 == ctrl.images.length - 1 ? true : false;
+                ctrl.leftDisabled = false;
+                ctrl.rightDisabled = ctrl.imgToPreview + 2 >= ctrl.images.length;
                 if (ctrl.imgToPreview == ctrl.images.length - 1 ){
-                    
                     return;
                 }
                 ctrl.imgToPreview++;
@@ -64,8 +78,10 @@ angular.module('app')
 
 
             this.showPrevImage = () => {
+                ctrl.leftDisabled = ctrl.imgToPreview - 2 < 0;
+                ctrl.rightDisabled = false;
                 if(ctrl.imgToPreview == 0){
-                    ctrl.leftDisabled = true;
+                   
                     return;
                 }
                 ctrl.imgToPreview--;
