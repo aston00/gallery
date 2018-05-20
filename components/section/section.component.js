@@ -2,121 +2,108 @@ angular.module('app')
     .component('appSection', {
         template: require('./section.html'),
         bindings: {
-            images: '<'
+            images: '<',
+            section: '<'
         },
         controller: function () {
 
-          
-           
-
             let ctrl = this;
-            ctrl.copiedSuccessful = false;
-
+            
             ctrl.$onInit = function () {
                 ctrl.leftDisabled = true;
                 ctrl.rightDisabled = false;
-                console.log(ctrl.imgToPreview);
-                console.log(ctrl.images);
                 ctrl.imgToPreview = 0;
+                ctrl.copiedSuccessfully = false;
             }
 
             ctrl.$onChanges = function (changes) {
                 if (changes.images) {
                     ctrl.images = changes.images.currentValue;
                 }
-                // if (changes.imgToPreview){
-                //     console.log(changes);
-                //     ctrl.rightDisabled = ctrl.images.length == changes.imgToPreview + 1 ? true : false;
-                // }
-
-                    // let elem = document.querySelector('.carousel-preview-image');
-                    // elem.style.backgroundImage = 'url(' + ctrl.images[ctrl.imgToPreview] + ')';
-                    // console.log('changes', changes);
-                
             }
 
-            ctrl.showExectItem = function(index){
-                console.log(index);
-                
+            //Showing chosen item 
+            ctrl.showChosenItem = function(index){
+                ctrl.copiedSuccessfully = false;
+                //Checking whether item we choose is eithe last or first 
                 ctrl.leftDisabled = index == 0;
                 ctrl.rightDisabled = index == ctrl.images.length - 1
                 
-                
                 ctrl.imgToPreview = index;
-                
             }
            
 
             this.showNextImage = () => {
-                //WRONG FLOW - 
+                ctrl.copiedSuccessfully = false;
+                //Arrows accessibility section
                 ctrl.leftDisabled = false;
                 ctrl.rightDisabled = ctrl.imgToPreview + 2 >= ctrl.images.length;
-                if (ctrl.imgToPreview == ctrl.images.length - 1 ){
+                if (ctrl.imgToPreview == ctrl.images.length - 1 )
                     return;
-                }
+                
+                //Showing next image
                 ctrl.imgToPreview++;
 
-                //Moving slider
-                
-              
-                let sth = document.querySelector('.carousel-bottomt-slider');
-                let width = sth.offsetWidth;
-                console.log('width', width);
-                let elemW = width * .33;
-                console.log('elemW', elemW);
-                // let final = width - 2 * elemW;
+                //Moving slider in the bottom slider section
+                let slider = document.querySelector('.carousel-bottomt-slider');
+                let sliderWidth = slider.offsetWidth;
                 let f = ctrl.imgToPreview / 3;
-
-
-                if (Number.isInteger(f)) {
-                    document.querySelector('.carousel-bottomt-slider').scrollLeft = f * width ;
-                }
+                if (Number.isInteger(f)) 
+                    document.querySelector('.carousel-bottomt-slider').scrollLeft = f * sliderWidth;
             }
             
-
-
-
-
             this.showPrevImage = () => {
+                ctrl.copiedSuccessfully = false;
+                //Arrows accessibility section
                 ctrl.leftDisabled = ctrl.imgToPreview - 2 < 0;
                 ctrl.rightDisabled = false;
                 if(ctrl.imgToPreview == 0){
-                   
                     return;
                 }
+
+                //Showing previous image
                 ctrl.imgToPreview--;
 
-                let sth = document.querySelector('.carousel-bottomt-slider');
-                let width = sth.offsetWidth;
-                console.log('width', width);
-                let elemW = width * .33;
-                console.log('elemW', elemW);
-                let f = (ctrl.imgToPreview + 1)/ 3;
-
-
-                if (Number.isInteger(f)) {
-                    document.querySelector('.carousel-bottomt-slider').scrollLeft = f * width - width;
-                } else {
-                    document.querySelector('.carousel-bottomt-slider').scrollLeft = Math.floor(f) * width;
-                }
+                //Moving slider in the bottom slider section
+                let slider = document.querySelector('.carousel-bottomt-slider');
+                let sliderWidth = slider.offsetWidth;
+                let f = (ctrl.imgToPreview + 1) / 3;
+                if (Number.isInteger(f)) 
+                    document.querySelector('.carousel-bottomt-slider').scrollLeft = f * sliderWidth - sliderWidth;
+                else 
+                    document.querySelector('.carousel-bottomt-slider').scrollLeft = Math.floor(f) * sliderWidth;
+                
 
             }
 
 
-            this.copyToClipboard = function () {
-                let element = document.querySelector('.copy-to-clipboard-input');
-                element.select();
+            this.copyToClipboard = () => {
+                
+                //Creating input out of user's view
+                let newElement = document.createElement('input');
+                let bodyElement = document.querySelector('body');
+
+                //To prevent user from seeing created input
+                newElement.style.position = 'absolute';
+                newElement.style.top = '-2000rem';
+                newElement.style.left = '-2000rem';
+
+                //Passing image link into input field
+                newElement.value = ctrl.images[ctrl.imgToPreview];
+
+                //Appending element to body and adding link to the clipboard
+                bodyElement.appendChild(newElement);
+                newElement.select();
                 let clipboardCopy = document.execCommand('copy');
-                if (clipboardCopy) {
-                    ctrl.copiedSuccessful = true;
-                } else {
+
+                if (clipboardCopy) 
+                    ctrl.copiedSuccessfully = true;
+                else 
                     console.log('error while copying to clipbaord');
-                }
+                
+                //Removing created element from the body
+                bodyElement.removeChild(newElement);
             }
-
-
-
-
         }
     });
 

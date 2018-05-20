@@ -14,7 +14,7 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function($
         .state({
             name: 'section',
             url: '/section/:section',
-            template: '<app-section images="vm.items"></app-section>',
+            template: '<app-section images="vm.items" section="vm.section"></app-section>',
             resolve: {
                 data : function(){
                     debugger;
@@ -30,6 +30,7 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function($
                         ctrl.items = data;
                     })
                     debugger;
+                    ctrl.section = $stateParams.section;
                     // ctrl.items = '';
                 }
                 

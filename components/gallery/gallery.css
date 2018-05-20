@@ -1,5 +1,5 @@
 .gallery-section {
-    background-color: #eeeeee;
+    background-color: inherit;
     height: 100vh;
 }
 .gallery-heading {
@@ -11,6 +11,7 @@
 .gallery-heading h2{
     color: #1E90FF;
     font-weight: 400;
+    text-shadow: 2px 4px 2px #ccc;
     font-size: 6rem;
     padding: 2rem;
 }

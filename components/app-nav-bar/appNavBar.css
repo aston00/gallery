@@ -31,3 +31,15 @@
     font-size: 2rem;
     padding: 1rem 2rem;
 } 
+
+.list > li > a:link,
+.list > li > a:visited,
+.list > li > a:active  {
+    color: #fafafa;
+    text-decoration: none;
+}
+
+.list > li > a:hover {
+    color: #1E90FF;
+    
+}

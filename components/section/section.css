@@ -7,26 +7,52 @@
 .carousel-container {}
 
 .carousel-main-image {
-  width: 82%;
+  width: 70%;
   position: relative;
   margin: 12rem auto 0 auto;
 }
 
 .carousel-count {
-  position: absolute;
   font-size: 2rem;
+  position: absolute;
+  bottom:0;
+  right:0;
+  color: #fafafa;
+  padding: .6rem;
 }
 
 .carousel-preview-image {
-  width: 92%;
+  width: 90%;
   border: .3rem solid #ccc;
-  
-  height: 76rem;
+  height: 68rem;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-color: #333;
+  border-top-right-radius: .5rem;
+  border-top-left-radius: .5rem;
   margin: auto;
+}
+
+.clipboard-container {
+  position: absolute;
+  left: 0;
+}
+
+.clipboard-copy-button {
+  color:#fafafa;
+  font-size: 2rem;
+  padding: .6rem;
+  cursor: pointer;
+}
+
+.clipboard-copy-button:hover {
+  text-decoration: underline;
+}
+.clipboard-success-message {
+  color:#fafafa;
+  font-size: 2rem;
+  padding: .6rem;
 }
 
 .carousel-actions-container {
@@ -69,23 +95,27 @@
   justify-content: center;
   align-items: center;
   height: 4rem;
-  width: 92%;
+  width: 90%;
   margin: auto;
   background-color: #333;
   border: 2px solid #ccc;
+  position: relative;
+  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: .5rem;
 }
 
 .carousel-caption-text {
-  
+  text-transform: capitalize;
   font-size: 3rem;
   color: #fafafa;
+  letter-spacing: 1rem;
 }
 
 .carousel-bottomt-slider {
   display: -webkit-flex;
   overflow-y: hidden;
   overflow-x: auto;
-  width: 56%;
+  width: 44%;
   margin: auto;
   display: flex;
 }
@@ -93,14 +123,13 @@
 .carousel-bottom-item-container:not(:first-child), .carousel-bottom-item-container:not(:nth-child(3n + 1)) {
   flex: 0 0 33.33%;
   margin: 0 0  0 0;
-  height: 20rem;
+  height: 16rem;
   border: 2px solid #ccc;
   opacity: .5;
 }
 
 .chosen {
   opacity: 1 !important;
-  
 }
 
 
@@ -112,14 +141,14 @@
 .carousel-bottom-item-container:nth-child(3n + 1), .carousel-bottom-item-container:first-child {
   flex: 0 0 33.33%;
   margin: 0 0 0 0;
-  height: 20rem;
+  height: 16rem;
   border: 2px solid #ccc;
   opacity: .5;
 }
 
 .carousel-bottom-item {
   width: 100%;
-  height: 20rem;
+  height: 16rem;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

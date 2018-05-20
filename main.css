@@ -16,5 +16,6 @@ html {
 }
 
 body {
+    position: relative;
     background-color: mintcream;
 }

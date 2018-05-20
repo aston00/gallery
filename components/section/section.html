@@ -1,55 +1,40 @@
 <section class="section-container">
-
-
-
-  <!-- TODO: Clipboard copying here -->
+  <!-- Main section -->
   <section class="carousel-section">
     <div class="carousel-container">
       <div class="carousel-main-image">
-        <div class="carousel-count">1 / 6</div>
+        
+        <!-- Main image -->
         <div class="carousel-preview-image" ng-style="{'background-image':'url(' + $ctrl.images[$ctrl.imgToPreview] + ')'}"></div>
 
-
+        <!-- Arrows section -->
         <div class="carousel-actions-container">
           <a class="carousel-prev" ng-click="$ctrl.showPrevImage()" ng-class="{'fadeArrow' : $ctrl.leftDisabled }">❮</a>
           <a class="carousel-next" ng-click="$ctrl.showNextImage()" ng-class="{'fadeArrow' : $ctrl.rightDisabled }">❯</a>
         </div>
-
+        <!-- Caption section  -->
         <div class="carousel-caption-container">
-          <p class="carousel-caption-text">hello</p>
+          <p class="carousel-caption-text">{{$ctrl.section}}</p>
+          <div class="carousel-count">
+            <span>{{$ctrl.imgToPreview + 1}}</span>
+            <span>&nbsp;of&nbsp;</span>
+            <span>{{$ctrl.images.length}}</span>
+          </div>
+
+          <!-- Clipboard copying section -->
+          <div class="clipboard-container">
+            <p ng-if="!$ctrl.copiedSuccessfully" ng-click="$ctrl.copyToClipboard()" class="clipboard-copy-button">Copy image link</p>
+            <p ng-if="$ctrl.copiedSuccessfully" class="clipboard-success-message">Copying successful!</p>
+          </div>
         </div>
-
       </div>
-
-
-
     </div>
 
-
+    <!-- Bottom slider section -->
     <div class="carousel-bottomt-slider">
-      <div ng-repeat="image in $ctrl.images track by $index" class="carousel-bottom-item-container" ng-class="{'chosen' : $index == $ctrl.imgToPreview }" ng-click="$ctrl.showExectItem($index)">
+      <div ng-repeat="image in $ctrl.images track by $index" class="carousel-bottom-item-container" ng-class="{'chosen' : $index == $ctrl.imgToPreview }" ng-click="$ctrl.showChosenItem($index)">
         <div class="carousel-bottom-item"   ng-style="{'background-image':'url({{image}})'}" ng-click="$ctrl.showImage(image)"></div>
       </div>
     </div>
   </section>
-
-
-
 </section>
-<!-- 
-  <div>
-    <ul>
-      <li ng-repeat="x in $ctrl.sections track by $index">{{x}}</li>
-    </ul>
-
-    <div>
-      <h2>Click button to add link to the clipboard</h2>
-      <h2>Link was added to the clipboard</h2>
-    </div>
-    <div class="copy-to-clipboard-container">
-      <input type="text" class="copy-to-clipboard-input">
-      <button ng-click="$ctrl.copyToClipboard()" class="copy-to-clipboard-button">Copy</button>
-    </div>
-  </div>
-
-</section> -->
