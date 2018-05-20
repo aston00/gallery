@@ -3,7 +3,7 @@ angular.module('app')
         this.getSections = function(){
             return $q((resolve, reject) => {
                 resolve([
-                    'nature', 
+                    'natureasddasdasdsasda', 
                     'people',
                     'women',
                     'rain',

@@ -40,6 +40,8 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function($
         
 }])
 
+require('./assets/img/symbol-defs.svg');
+
 
 // require('./directives/clipboard.directive');
 require('./components/app-nav-bar/appNavBar.component');
@@ -55,6 +57,7 @@ require('./services/previewed-images.service');
 
 require('./main.css');
 // require('./components/skillsPage/skills.component');
+
 
 
 
