@@ -7,6 +7,7 @@ angular.module('app')
         },
         controller: function () {
             let ctrl = this;
+            
             this.$onInit = () => {
                 ctrl.sortedSections = [];
                 ctrl.currentSection = '';
@@ -14,7 +15,7 @@ angular.module('app')
                 ctrl.bottomDisabled = false;
             }
 
-            this.$onChanges = (changes) => {
+            this.$onChanges = changes => {
                 if (changes.sections.currentValue != undefined) {
                     ctrl.sections = changes.sections.currentValue;
                     var i, j, chunk = 3;

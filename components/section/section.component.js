@@ -9,14 +9,14 @@ angular.module('app')
 
             let ctrl = this;
             
-            ctrl.$onInit = function () {
+            ctrl.$onInit = () => {
                 ctrl.leftDisabled = true;
                 ctrl.rightDisabled = false;
                 ctrl.imgToPreview = 0;
                 ctrl.copiedSuccessfully = false;
             }
 
-            ctrl.$onChanges = function (changes) {
+            ctrl.$onChanges = changes => {
                 if (changes.images) {
                     ctrl.images = changes.images.currentValue;
                     document.documentElement.scrollTop = 0;
@@ -24,7 +24,7 @@ angular.module('app')
             }
 
             //Showing chosen item 
-            ctrl.showChosenItem = function(index){
+            ctrl.showChosenItem = index => {
                 ctrl.copiedSuccessfully = false;
                 //Checking whether item we choose is eithe last or first 
                 ctrl.leftDisabled = index == 0;

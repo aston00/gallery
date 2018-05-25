@@ -40,10 +40,7 @@ angular.module('app')
 
             ]
         };
-        this.getImagesBySection = function(section){
-            console.log(section);
-            return $q((resolve, reject) => {
-                resolve(ctrl.database[section]);
-            })
+        this.getImagesBySection = section => {
+            return $q((resolve, reject) => resolve(ctrl.database[section]))
         }
     }])
