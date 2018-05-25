@@ -5,7 +5,7 @@ angular.module('app')
             images: '<',
             section: '<'
         },
-        controller: function () {
+        controller:['$window', function ($window) {
 
             let ctrl = this;
             
@@ -19,6 +19,7 @@ angular.module('app')
             ctrl.$onChanges = function (changes) {
                 if (changes.images) {
                     ctrl.images = changes.images.currentValue;
+                    document.documentElement.scrollTop = 0;
                 }
             }
 
@@ -104,7 +105,7 @@ angular.module('app')
                 //Removing created element from the body
                 bodyElement.removeChild(newElement);
             }
-        }
+        }]
     });
 
 require('./section.css');

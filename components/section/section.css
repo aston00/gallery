@@ -9,7 +9,17 @@
 .carousel-main-image {
   width: 70%;
   position: relative;
-  margin: 12rem auto 0 auto;
+  margin: 0 auto ;
+}
+
+.carousel-section-message {
+  font-size: 5rem;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: normal;
+  padding: 2rem 0;
+  color: #1E90FF;
+  letter-spacing: 1rem;
 }
 
 .carousel-count {

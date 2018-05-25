@@ -7,6 +7,11 @@ angular.module('app')
                     'people',
                     'women',
                     'rain',
+                    'forest',
+                    'nature', 
+                    'people',
+                    'women',
+                    'rain',
                     'forest'
                 ])
             })

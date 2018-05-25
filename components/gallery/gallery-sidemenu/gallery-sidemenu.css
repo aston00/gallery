@@ -18,67 +18,30 @@
 }
 
 .gallery-sidemenu-link-item {
+    border-bottom: 1px solid #ccc;
+    height:25%;
     position: relative;
     padding: .5rem 1.5rem .5rem 1.5rem;
     cursor: pointer;
-    /* border: 1px solid lightgrey; */
 }
 
-/* .gallery-sidemenu-link-item:after{
-    content: "\2192";
-    position: absolute;
-    top: 0;
-    font-size: 4rem;
-    color: #1E90FF;
-    right: 20rem;
-    height: 100%;
-    opacity:0;
-    width: 3px;
-    transition: all .4s cubic-bezier(1, 0, 0, 1) 0.2s;
-} */
-
-/* .gallery-sidemenu-link-item:hover:after {
-    right: 10%;
-    opacity: 1;
-} */
-
 .gallery-sidemenu-link-item:before {
-    /* content: '';
-    border-bottom: 1px solid green;
-    position: absolute;
-    top:0;
-    left:0;
-    height:100%;
-    width:3px;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, border-bottom .3s; */
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 3px;
-    /* clip-path: polygon(0 0, 1 0, 50% 50%, 100% 100%); */
-    /* background-color: #1E90FF; */
     transform: scaleY(0);
     transform-origin: center;
     transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, border .4s, background-color 0.1s;
 }
 
 .gallery-sidemenu-link-item:hover:before {
-    /* transform: scaleX(1);
-    width: 100%; */
     border-bottom: 3px solid #1E90FF;
     transform: scaleY(1);
     width: 100%;
 }
-
-/* .gallery-sidemenu-link-item:hover {
-    border-bottom: 1px solid #1E90FF;
-} */
-
-/* transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,  */
 
 .gallery-sidemenu-link-a {
     position: relative;
@@ -108,10 +71,23 @@
 
 .down-button,
 .up-button {
-   display: inline-block;
+   display: block;
    margin: auto;
     width: 3rem;
     fill: #1E90FF;
     margin-left: 9rem;
     height: 3rem;
+    cursor: pointer;
+    transition: all .4s ease-in;
+}
+
+.up-button:hover {
+    transform: rotateZ(360deg) scale(1.2);
+}
+
+.down-button {
+    margin-top: 1rem;
+}
+.down-button:hover {
+    transform: rotateZ(360deg) scale(1.2);
 }

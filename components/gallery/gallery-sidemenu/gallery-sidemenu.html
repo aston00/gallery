@@ -1,16 +1,16 @@
 <ng-include src="'assets/img/symbol-defs.svg'"></ng-include>
 <section class="gallery-sidemenu">
     <div class="gallery-sidemenu-link-container">
-            <svg class="up-button"><use xlink:href="#icon-circle-up"></use></svg>
+            <svg ng-click="$ctrl.showPrevSections()" class="up-button"><use xlink:href="#icon-circle-up"></use></svg>
         <ul class="gallery-sidemenu-link-list">
-            <li class="gallery-sidemenu-link-item" ng-repeat="section in $ctrl.sections">
+            <li class="gallery-sidemenu-link-item" ng-repeat="section in $ctrl.sections track by $index">
                 <a ui-sref="section({section: section})" ng-mouseover="$ctrl.getImages({section:section});  $ctrl.startAnimation($event)"
                     class="gallery-sidemenu-link-a">{{section}}</a>
             </li>
 
         </ul>
         
-            <svg class="down-button"><use xlink:href="#icon-circle-down"></use></svg>
+            <svg ng-click="$ctrl.showNextSections()" class="down-button"><use xlink:href="#icon-circle-down"></use></svg>
         
     </div>
 </section>
