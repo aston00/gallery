@@ -18,7 +18,7 @@
 }
 
 .gallery-sidemenu-link-item {
-    border-bottom: 1px solid #EFEEF1;
+    border-bottom: 1px solid #cccccc;
     height: 4.5rem;
     min-height: 4.5rem;
     position: relative;
@@ -88,6 +88,6 @@
 }
 
 .fadeSectionArrow {
-    cursor: unset;
+    cursor: unset !important;
     opacity: 0;
 }

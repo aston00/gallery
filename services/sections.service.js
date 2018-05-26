@@ -6,13 +6,15 @@ angular.module('app')
                     'nature',
                     'people',
                     'women',
+                    'black-white',
                     'rain',
                     'forest',
                     'nature',
                     'people',
                     'women',
+                    'black-white',
                     'rain',
-                    'forest'
+                    'forest',
                 ])
             })
         }
