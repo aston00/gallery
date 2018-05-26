@@ -1,7 +1,7 @@
 angular.module('app', ['ui.router']);
 
 
-angular.module('app').config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+angular.module('app').config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
 
@@ -15,35 +15,21 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function($
             name: 'section',
             url: '/section/:section',
             template: '<app-section images="vm.items" section="vm.section"></app-section>',
-            resolve: {
-                data : function(){
-                    debugger;
-                }
-            },
-            controller: ['$stateParams', 'PreviewedImagesService', function ($stateParams, PreviewedImagesService){
+            controller: ['$stateParams', 'PreviewedImagesService', function ($stateParams, PreviewedImagesService) {
                 this.items = '';
                 let ctrl = this;
                 this.$onInit = () => {
-                    PreviewedImagesService.getImagesBySection($stateParams.section).then(data => {
-                        // console.log(data);
-                        // debugger;
-                        ctrl.items = data;
-                    })
-                    debugger;
+                    PreviewedImagesService.getImagesBySection($stateParams.section).then(data => ctrl.items = data);
                     ctrl.section = $stateParams.section;
-                    // ctrl.items = '';
                 }
-                
             }],
             controllerAs: 'vm'
         })
-        
+
 }])
 
 require('./assets/img/symbol-defs.svg');
 
-
-// require('./directives/clipboard.directive');
 require('./components/app-nav-bar/appNavBar.component');
 require('./components/showcase/showcase.component');
 require('./components/gallery/gallery.component');
@@ -56,9 +42,3 @@ require('./services/sections.service');
 require('./services/previewed-images.service');
 
 require('./main.css');
-// require('./components/skillsPage/skills.component');
-
-
-
-
-

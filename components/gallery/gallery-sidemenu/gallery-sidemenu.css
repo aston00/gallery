@@ -45,6 +45,7 @@
 }
 
 .gallery-sidemenu-link-a {
+    text-shadow: 2px 5px 10px #ccc;
     position: relative;
     color: #333333;
     text-decoration: none;
@@ -63,6 +64,8 @@
 .down-button,
 .up-button {
     display: block;
+    box-shadow: 2px 3px 5px #ccc;
+    border-radius: 20px;
     margin: auto;
     width: 3rem;
     fill: #1E90FF;
