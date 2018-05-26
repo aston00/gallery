@@ -1,11 +1,11 @@
 <section class="section-container">
   <!-- Main section -->
   <section class="carousel-section">
-     
+
     <div class="carousel-container">
-        
+
       <div class="carousel-main-image">
-          <h2 class="carousel-section-message">{{$ctrl.section}}</h2>
+        <h2 class="carousel-section-message">{{$ctrl.section}}</h2>
         <!-- Main image -->
         <div class="carousel-preview-image" ng-style="{'background-image':'url(' + $ctrl.images[$ctrl.imgToPreview] + ')'}"></div>
 
@@ -34,8 +34,9 @@
 
     <!-- Bottom slider section -->
     <div class="carousel-bottomt-slider">
-      <div ng-repeat="image in $ctrl.images track by $index" class="carousel-bottom-item-container" ng-class="{'chosen' : $index == $ctrl.imgToPreview }" ng-click="$ctrl.showChosenItem($index)">
-        <div class="carousel-bottom-item"   ng-style="{'background-image':'url({{image}})'}" ng-click="$ctrl.showImage(image)"></div>
+      <div ng-repeat="image in $ctrl.images track by $index" class="carousel-bottom-item-container" ng-class="{'chosen' : $index == $ctrl.imgToPreview }"
+        ng-click="$ctrl.showChosenItem($index)">
+        <div class="carousel-bottom-item" ng-style="{'background-image':'url({{image}})'}" ng-click="$ctrl.showImage(image)"></div>
       </div>
     </div>
   </section>

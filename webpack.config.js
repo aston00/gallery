@@ -5,9 +5,9 @@ module.exports = {
     entry: './app.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
     },
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     module: {
         rules: [
                     {

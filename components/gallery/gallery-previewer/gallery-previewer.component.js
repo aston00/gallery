@@ -2,12 +2,9 @@ angular.module('app')
     .component('appGalleryPreviewer', {
         template: require('./gallery-previewer.html'),
         bindings: {
-          
-            images:'<'
+            images: '<'
         },
-        controller: function(){
-            
-        }
+        controller: function () {}
     })
 
 require('./gallery-previewer.css');

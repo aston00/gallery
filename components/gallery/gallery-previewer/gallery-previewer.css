@@ -2,12 +2,10 @@
     background-color: white;
 }
 
-
-
 .gallery-previewer-composition {
     display: block;
     position: relative;
-    width:50%;
+    width: 50%;
     margin: auto;
     margin-top: 5rem;
 }
@@ -31,20 +29,17 @@
     transform: scale(1.05) translateY(-0.5rem);
 }
 
-.gallery-previewer-example:nth-child(1){
-    top:0;
-    left:0;
-
+.gallery-previewer-example:nth-child(1) {
+    top: 0;
+    left: 0;
 }
 
-.gallery-previewer-example:nth-child(2){
-    
+.gallery-previewer-example:nth-child(2) {
     top: 13rem;
     left: 11rem;
 }
 
-.gallery-previewer-example:nth-child(3){
-    
+.gallery-previewer-example:nth-child(3) {
     top: 4rem;
     left: 24rem;
 }

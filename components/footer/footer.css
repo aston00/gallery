@@ -1,7 +1,5 @@
 .footer-section {
     background-color: inherit;
-   
-    
 }
 
 .footer-info-container {
@@ -11,7 +9,7 @@
     align-items: center;
 }
 
-.footer-info-container > h2 {
+.footer-info-container>h2 {
     font-size: 3rem;
     color: #1E90FF;
 }

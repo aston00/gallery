@@ -25,8 +25,8 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function($
                 let ctrl = this;
                 this.$onInit = () => {
                     PreviewedImagesService.getImagesBySection($stateParams.section).then(data => {
-                        console.log(data);
-                        debugger;
+                        // console.log(data);
+                        // debugger;
                         ctrl.items = data;
                     })
                     debugger;

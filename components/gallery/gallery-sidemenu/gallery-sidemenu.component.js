@@ -7,39 +7,38 @@ angular.module('app')
         },
         controller: function () {
             let ctrl = this;
-            
+
             this.$onInit = () => {
-                ctrl.sortedSections = [];
-                ctrl.currentSection = '';
-                ctrl.topDisabled = false;
+                ctrl.currentSection = 0;
+                ctrl.topDisabled = true;
                 ctrl.bottomDisabled = false;
             }
 
             this.$onChanges = changes => {
-                if (changes.sections.currentValue != undefined) {
+                if (changes.sections && changes.sections.currentValue) {
                     ctrl.sections = changes.sections.currentValue;
-                    var i, j, chunk = 3;
-                    ctrl.sortedSections = [];
-                    for (i = 0, j = ctrl.sections.length; i < j; i += chunk) {
-                        ctrl.sortedSections.push(ctrl.sections.slice(i, i + chunk));
-                        // do whatever
-                    }
-
-                    
                 }
             }
 
-            this.showNextSections =  () => {
+            this.showNextSections = () => {
                 let eleme = document.querySelector('.gallery-sidemenu-link-list');
                 let height = eleme.offsetHeight;
-                eleme.scrollTop = height;
+                let scrollHeight = eleme.scrollHeight;
+                eleme.scrollTop += height;
+                ctrl.topDisabled = false;
+                ctrl.bottomDisabled = ctrl.currentSection == ctrl.sections.length - 2;
+                ctrl.currentSection++;
             }
 
-          
             this.showPrevSections = () => {
+                ctrl.topDisabled = ctrl.currentSection <= 1;
                 let eleme = document.querySelector('.gallery-sidemenu-link-list');
                 let height = eleme.offsetHeight;
-                eleme.scrollTop = document.documentElement.scrollTop - height;
+                let now = eleme.scrollTop;
+                eleme.scrollTop = now - height;
+                ctrl.bottomDisabled = false;
+                ctrl.currentSection--;
+
             }
         }
     })

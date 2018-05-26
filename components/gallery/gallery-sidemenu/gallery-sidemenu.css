@@ -18,8 +18,9 @@
 }
 
 .gallery-sidemenu-link-item {
-    border-bottom: 1px solid #ccc;
-    height:25%;
+    border-bottom: 1px solid #EFEEF1;
+    height: 4.5rem;
+    min-height: 4.5rem;
     position: relative;
     padding: .5rem 1.5rem .5rem 1.5rem;
     cursor: pointer;
@@ -52,27 +53,17 @@
     font-style: italic;
     text-transform: capitalize;
     letter-spacing: .3rem;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 100;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.gallery-sidemenu-link-list:nth-child(1) {}
-
-.gallery-sidemenu-link-list:nth-child(2) {}
-
-.gallery-sidemenu-link-list:nth-child(3) {}
-
-.gallery-sidemenu-link-list:nth-child(4) {}
-
-.gallery-sidemenu-link-list:nth-child(5) {}
-
 .down-button,
 .up-button {
-   display: block;
-   margin: auto;
+    display: block;
+    margin: auto;
     width: 3rem;
     fill: #1E90FF;
     margin-left: 9rem;
@@ -88,6 +79,12 @@
 .down-button {
     margin-top: 1rem;
 }
+
 .down-button:hover {
     transform: rotateZ(360deg) scale(1.2);
+}
+
+.fadeSectionArrow {
+    cursor: unset;
+    opacity: 0;
 }

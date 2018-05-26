@@ -1,14 +1,14 @@
 angular.module('app')
-    .service('SectionsService',['$q', function($q){
-        this.getSections = function(){
+    .service('SectionsService', ['$q', function ($q) {
+        this.getSections = function () {
             return $q((resolve, reject) => {
                 resolve([
-                    'nature', 
+                    'nature',
                     'people',
                     'women',
                     'rain',
                     'forest',
-                    'nature', 
+                    'nature',
                     'people',
                     'women',
                     'rain',
@@ -16,5 +16,5 @@ angular.module('app')
                 ])
             })
         }
-        
+
     }]);
