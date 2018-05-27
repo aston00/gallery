@@ -1,8 +1,8 @@
 <ng-include src="'assets/img/symbol-defs.svg'"></ng-include>
 <section class="gallery-sidemenu">
     <div class="gallery-sidemenu-link-container">
-        <svg ng-click="$ctrl.topDisabled ||$ctrl.showPrevSections()" ng-class="{'fadeSectionArrow' : $ctrl.topDisabled}" class="up-button">
-            <use xlink:href="#icon-arrow-up2"></use>
+        <svg ng-attr="" ng-click="$ctrl.topDisabled ||$ctrl.showPrevSections()" ng-class="{'fadeSectionArrow' : $ctrl.topDisabled}" class="up-button">
+            <use style="pointer-events: none"  xlink:href="#icon-arrow-up2"></use>
         </svg>
 
         <ul class="gallery-sidemenu-link-list">
@@ -12,8 +12,8 @@
             </li>
         </ul>
 
-        <svg ng-click="$ctrl.bottomDisabled || $ctrl.showNextSections()" ng-class="{'fadeSectionArrow' : $ctrl.bottomDisabled}" class="down-button">
-            <use xlink:href="#icon-arrow-down2"></use>
+        <svg ng-attr=""  ng-click="$ctrl.bottomDisabled || $ctrl.showNextSections()" ng-class="{'fadeSectionArrow' : $ctrl.bottomDisabled}" class="down-button">
+            <use style="pointer-events: none" xlink:href="#icon-arrow-down2"></use>
         </svg>
 
     </div>
