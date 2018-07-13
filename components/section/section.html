@@ -5,9 +5,17 @@
     <div class="carousel-container">
 
       <div class="carousel-main-image">
-        <h2 class="carousel-section-message">{{$ctrl.section}}</h2>
+        <!-- <h2 class="carousel-section-message">{{$ctrl.section}}</h2> -->
         <!-- Main image -->
-        <div class="carousel-preview-image" ng-style="{'background-image':'url(' + $ctrl.images[$ctrl.imgToPreview] + ')'}"></div>
+        <!-- <div class="carousel-preview-image" ng-style="{'background-image':'url(' + $ctrl.images[$ctrl.imgToPreview] + ')'}"></div> -->
+        <div ng-style="{'margin-left': (0 - $ctrl.imgToPreview * 900) +502 + 'px', 'display':'inline-flex', 'width': ($ctrl.images.length) * 900 + 'px', 'transition': 'all .8s'}">
+          <div ng-repeat="img in $ctrl.images track by $index">
+            <div class="carousel-preview-image" ng-style="{'background-image':'url(' + img + ')'}">
+
+            </div>
+          </div>
+
+        </div>
 
         <!-- Arrows section -->
         <div class="carousel-actions-container">

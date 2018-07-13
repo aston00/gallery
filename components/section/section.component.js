@@ -9,6 +9,8 @@ angular.module('app')
 
             let ctrl = this;
 
+            let srcCenter = document.querySelector('.carousel-preview-image');
+
             this.$onInit = () => {
                 ctrl.leftDisabled = true;
                 ctrl.rightDisabled = false;
