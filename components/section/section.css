@@ -1,5 +1,6 @@
 .section-container {
   margin-bottom: 10rem;
+  margin-top: 3rem;
 }
 
 .carousel-section {}
@@ -33,7 +34,8 @@
 }
 
 .carousel-preview-image {
-  width: 900px;
+  width: 1200px;
+  transition: all .6s;
   display: inline-block;
   border: .3rem solid #ccc;
   height: 68rem;
@@ -88,6 +90,7 @@
   -ms-user-select: none;
   /* IE10+ */
   transition: all .4s;
+  margin-left: 120px;
 }
 
 .carousel-next {
@@ -101,6 +104,7 @@
   /* Firefox */
   -ms-user-select: none;
   /* IE10+ */
+  margin-right: 120px;
 }
 
 .carousel-prev:hover,
@@ -112,6 +116,11 @@
 .carousel-prev.fadeArrow:hover,
 .carousel-next.fadeArrow:hover {
   cursor: unset;
+}
+
+.carousel-main-container {
+  transition: all .8s;
+  display: flex;
 }
 
 .carousel-caption-container {

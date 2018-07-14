@@ -67,7 +67,6 @@ angular.module('app')
                 'https://images.pexels.com/photos/589841/pexels-photo-589841.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
                 'https://images.pexels.com/photos/1034887/pexels-photo-1034887.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
                 'https://images.pexels.com/photos/167698/pexels-photo-167698.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-                'https://www.pexels.com/photo/forced-perspective-photography-of-cars-running-on-road-below-smartphone-799443/',
                 'https://images.pexels.com/photos/462149/pexels-photo-462149.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
                 'https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=750&w=1260',
                 'https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',

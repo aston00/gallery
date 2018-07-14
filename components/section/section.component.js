@@ -6,24 +6,22 @@ angular.module('app')
             section: '<'
         },
         controller: ['$window', function ($window) {
-
             let ctrl = this;
-
-            let srcCenter = document.querySelector('.carousel-preview-image');
+            ctrl.bodyWidth = document.querySelector('body').offsetWidth;
 
             this.$onInit = () => {
                 ctrl.leftDisabled = true;
                 ctrl.rightDisabled = false;
                 ctrl.imgToPreview = 0;
                 ctrl.copiedSuccessfully = false;
-            }
+            };
 
             this.$onChanges = changes => {
                 if (changes.images) {
                     ctrl.images = changes.images.currentValue;
                     document.documentElement.scrollTop = 0;
-                }
-            }
+                };
+            };
 
             //Showing chosen item 
             this.showChosenItem = index => {
@@ -33,7 +31,7 @@ angular.module('app')
                 ctrl.rightDisabled = index == ctrl.images.length - 1
 
                 ctrl.imgToPreview = index;
-            }
+            };
 
 
             this.showNextImage = () => {
@@ -53,16 +51,15 @@ angular.module('app')
                 let f = ctrl.imgToPreview / 3;
                 if (Number.isInteger(f))
                     document.querySelector('.carousel-bottomt-slider').scrollLeft = f * sliderWidth;
-            }
+            };
 
             this.showPrevImage = () => {
                 ctrl.copiedSuccessfully = false;
                 //Arrows accessibility section
                 ctrl.leftDisabled = ctrl.imgToPreview - 2 < 0;
                 ctrl.rightDisabled = false;
-                if (ctrl.imgToPreview == 0) {
+                if (ctrl.imgToPreview == 0)
                     return;
-                }
 
                 //Showing previous image
                 ctrl.imgToPreview--;
@@ -76,7 +73,7 @@ angular.module('app')
                 else
                     document.querySelector('.carousel-bottomt-slider').scrollLeft = Math.floor(f) * sliderWidth;
 
-            }
+            };
 
 
             this.copyToClipboard = () => {
@@ -84,7 +81,6 @@ angular.module('app')
                 //Creating input out of user's view
                 let newElement = document.createElement('input');
                 let bodyElement = document.querySelector('body');
-                debugger;
                 //To prevent user from seeing created input
                 newElement.style.position = 'absolute';
                 newElement.style.top = '-2000rem';
@@ -105,7 +101,7 @@ angular.module('app')
 
                 //Removing created element from the body
                 bodyElement.removeChild(newElement);
-            }
+            };
         }]
     });
 

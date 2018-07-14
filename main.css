@@ -22,7 +22,8 @@ html {
 }
 
 body {
-    position: relative;
+    overflow-X: hidden;
+    /* position: relative; */
     background-color: mintcream;
     /* font-family: 'Crafty Girls', cursive; */
     font-family: 'Kavivanar', cursive;

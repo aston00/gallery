@@ -12,11 +12,11 @@ angular.module('app')
                     for (let i = 0, j = sections.length; i < j; i += chunk) {
                         ctrl.sortedSections.push(sections.slice(i, i + chunk));
                     }
-                   
+
                     let lastArray = ctrl.sortedSections[ctrl.sortedSections.length - 1];
                     let difference = 0;
                     let arraySort = [];
-                    if (lastArray.length < 4) 
+                    if (lastArray.length < 4)
                         lastArray.length = 4;
 
                     ctrl.sections = ctrl.sortedSections;
